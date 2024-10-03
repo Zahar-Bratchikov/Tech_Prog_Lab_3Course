@@ -34,8 +34,7 @@ class XML_parser {
                 } else if (line.startsWith("<genre>")) {
                     String genre = line.replaceAll("<genre>|</genre>", "").trim();
                     currentBook.genre = genre;
-                }
-                else if (line.startsWith("<price")) {
+                } else if (line.startsWith("<price")) {
                     String currency = line.replaceAll(".*currency=\"([^\"]+)\".*", "$1").trim();
                     double amount = Double.parseDouble(line.replaceAll("<price\\s+currency=\"[^\"]+\">|</price>", "").trim());
                     currentPrice = new Price(currency, amount);
