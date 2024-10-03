@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<library>
+    <book id="1">
+        <title>Effective Java</title>
+        <author>Isaac Asimov</author>
+        <year>1993</year>
+        <genre>History</genre>
+        <price currency="JPY">82.49</price>
+        <publisher>
+            <name>Classic Books</name>
+            <address>
+                <city>London</city>
+                <country>Japan</country>
+            </address>
+        </publisher>
+        <translator>Joshua Bloch</translator>
+    </book>
+    <book id="2">
+        <title>Clean Code</title>
+        <author>George Orwell</author>
+        <year>2008</year>
+        <genre>Science</genre>
+        <price currency="USD">42.84</price>
+        <isbn>978-0-524178554</isbn>
+        <format>Ebook</format>
+        <translator>George Orwell</translator>
+    </book>
+    <book id="3">
+        <title>Effective Java</title>
+        <author>George Orwell</author>
+        <year>1992</year>
+        <genre>Non-Fiction</genre>
+        <price currency="GBP">20.51</price>
+        <format>Audiobook</format>
+        <publisher>
+            <name>SciTech Publishers</name>
+            <address>
+                <city>New York</city>
+                <country>Japan</country>
+            </address>
+        </publisher>
+        <awards>
+            <award>Critics' Choice</award>
+        </awards>
+    </book>
+    <book id="4">
+        <title>1984</title>
+        <author>Isaac Asimov</author>
+        <year>2021</year>
+        <genre>Programming</genre>
+        <price currency="GBP">61.42</price>
+        <format>Print</format>
+        <publisher>
+            <name>Classic Books</name>
+            <address>
+                <city>London</city>
+                <country>Russia</country>
+            </address>
+        </publisher>
+    </book>
+    <book id="5">
+        <title>Effective Java</title>
+        <author>John Doe</author>
+        <year>1994</year>
+        <genre>Non-Fiction</genre>
+        <price currency="GBP">93.52</price>
+        <format>Print</format>
+        <publisher>
+            <name>SciTech Publishers</name>
+            <address>
+                <city>Moscow</city>
+                <country>UK</country>
+            </address>
+        </publisher>
+        <translator>Jane Austen</translator>
+    </book>
+</library>
