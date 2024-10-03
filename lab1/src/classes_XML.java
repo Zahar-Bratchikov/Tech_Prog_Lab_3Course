@@ -9,7 +9,7 @@ class Address {
 
     @Override
     public String toString() {
-        return "\n               city: " + city + " \n               country: " + country ;
+        return "\n\t\t\tcity: " + city + " \n\t\t\tcountry: " + country ;
     }
 }
 
@@ -24,7 +24,7 @@ class Publisher {
 
     @Override
     public String toString() {
-        return "\n          name: " + name + " \n          address: " + address;
+        return "\n\t\tname: " + name + " \n\t\taddress: " + address;
     }
 }
 
@@ -39,7 +39,7 @@ class Price {
 
     @Override
     public String toString() {
-        return "\n          currency: " + currency + " \n          amount: " + amount;
+        return "\n\t\tcurrency: " + currency + " \n\t\tamount: " + amount;
     }
 }
 
@@ -73,8 +73,8 @@ class Book {
 
     @Override
     public String toString() {
-        return "Book:\n     id: " + id + " \n     title: " + title + " \n     author: " + author + " \n     year: " + year +
-               " \n     genre: " + genre + " \n     price: " + price + " \n     format: " + format + " \n     publisher: " + publisher +
-               " \n     translator: " + translator + " \n     isbn: " + isbn + " \n     awards: " + awards;
+        return "Book:\n\tid: " + id + " \n\ttitle: " + title + " \n\tauthor: " + author + " \n\tyear: " + year +
+               " \n\tgenre: " + genre + " \n\tprice: " + price + " \n\tformat: " + format + " \n\tpublisher: " + publisher +
+               " \n\ttranslator: " + translator + " \n\tisbn: " + isbn + " \n\tawards: " + awards;
     }
 }
