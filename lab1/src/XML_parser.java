@@ -24,53 +24,53 @@ class XML_parser {
                     currentBook = new Book(id, "", "", 0, "", null, "", null, "", "", "");
                 } else if (line.startsWith("<title>")) {
                     String title = line.replaceAll("<title>|</title>", "").trim();
-                    currentBook.title = title;
+                    currentBook.setTitle(title);
                 } else if (line.startsWith("<author>")) {
                     String author = line.replaceAll("<author>|</author>", "").trim();
-                    currentBook.author = author;
+                    currentBook.setAuthor(author);
                 } else if (line.startsWith("<year>")) {
                     int year = Integer.parseInt(line.replaceAll("<year>|</year>", "").trim());
-                    currentBook.year = year;
+                    currentBook.setYear(year);
                 } else if (line.startsWith("<genre>")) {
                     String genre = line.replaceAll("<genre>|</genre>", "").trim();
-                    currentBook.genre = genre;
+                    currentBook.setGenre(genre);
                 } else if (line.startsWith("<price")) {
                     String currency = line.replaceAll(".*currency=\"([^\"]+)\".*", "$1").trim();
                     double amount = Double.parseDouble(line.replaceAll("<price\\s+currency=\"[^\"]+\">|</price>", "").trim());
                     currentPrice = new Price(currency, amount);
                 } else if (line.startsWith("<format>")) {
                     String format = line.replaceAll("<format>|</format>", "").trim();
-                    currentBook.format = format;
+                    currentBook.setFormat(format);
                 } else if (line.startsWith("<isbn>")) {
                     String isbn = line.replaceAll("<isbn>|</isbn>", "").trim();
-                    currentBook.isbn = isbn;
+                    currentBook.setIsbn(isbn);
                 } else if (line.startsWith("<translator>")) {
                     String translator = line.replaceAll("<translator>|</translator>", "").trim();
-                    currentBook.translator = translator;
+                    currentBook.setTranslator(translator);
                 } else if (line.startsWith("<publisher>")) {
                     currentPublisher = new Publisher("", null);
                 } else if (line.startsWith("<name>") && currentPublisher != null) {
                     String name = line.replaceAll("<name>|</name>", "").trim();
-                    currentPublisher.name = name;
+                    currentPublisher.setName(name);
                 } else if (line.startsWith("<city>")) {
                     String city = line.replaceAll("<city>|</city>", "").trim();
                     currentAddress = new Address(city, "");
                 } else if (line.startsWith("<country>")) {
                     String country = line.replaceAll("<country>|</country>", "").trim();
-                    currentAddress.country = country;
+                    currentAddress.setCountry(country);
                 } else if (line.startsWith("</address>") && currentPublisher != null) {
-                    currentPublisher.address = currentAddress;
+                    currentPublisher.setAddress(currentAddress);
                 } else if (line.startsWith("</publisher>")) {
-                    currentBook.publisher = currentPublisher;
+                    currentBook.setPublisher(currentPublisher);
                 } else if (line.startsWith("<awards>")) {
                     awards = "";
                 } else if (line.startsWith("<award>")) {
                     awards += line.replaceAll("<award>|</award>", "").trim() + ", ";
                 } else if (line.startsWith("</awards>")) {
-                    currentBook.awards = awards != null ? awards.replaceAll(", $", "") : null;
+                    currentBook.setAwards(awards != null ? awards.replaceAll(", $", "") : null);
                 } else if (line.startsWith("</book>")) {
                     if (currentBook != null) {
-                        currentBook.price = currentPrice;
+                        currentBook.setPrice(currentPrice);
                         books.add(currentBook);
                     }
                 }
