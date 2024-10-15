@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class Main {
@@ -17,6 +16,7 @@ public class Main {
         Book book = books.get(1);
         System.out.println(book.getId());
         System.out.println(book.getTitle());
+        System.out.println(book.getGenre());
         System.out.println(book.getAuthor());
     }
 }
