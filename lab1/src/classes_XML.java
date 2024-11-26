@@ -1,6 +1,6 @@
 class Address {
     private String city;
-    String country;
+    private String country;
 
     public Address(String city, String country) {
         this.city = city;
