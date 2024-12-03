@@ -62,12 +62,21 @@
 
     public class MenuManager
     {
-        private readonly static MenuManager instance;
+        private static readonly MenuManager instance;
         private List<Dish> dishes = new();
         private List<Drink> drinks = new();
 
         private MenuManager() { }
 
+        public static MenuManager Instance => instance;
 
+        public void AddDish(Dish dish) => dishes.Add(dish);
+        public void AddDrink(Drink drink) => drinks.Add(drink);
+        public void GetMenu()
+        {
+            Console.WriteLine("Menu: \n");
+            dishes.ForEach(dish => Console.WriteLine(dish.Name + "........." + dish.Price + "руб."));
+            drinks.ForEach(drink => Console.WriteLine(drink.Name + "........." + drink.Price + "руб."));
+        }
     }
 }
