@@ -1,7 +1,14 @@
-﻿using System;
-
-namespace RestaurantManagementSystem
+﻿namespace RestaurantManagementSystem
 {
+    public abstract class MenuItem
+    {
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public float Price { get; set; }
+
+        public abstract float GetCost();
+    }
+
     public class Dish : MenuItem
     {
         public override float GetCost()
@@ -51,5 +58,16 @@ namespace RestaurantManagementSystem
         {
             return drink.GetCost() + 2;
         }
+    }
+
+    public class MenuManager
+    {
+        private readonly static MenuManager instance;
+        private List<Dish> dishes = new();
+        private List<Drink> drinks = new();
+
+        private MenuManager() { }
+
+
     }
 }
