@@ -62,13 +62,13 @@
 
     public class MenuManager
     {
-        private static readonly MenuManager instance;
+        private static readonly MenuManager? instance;
         private List<Dish> dishes = new();
         private List<Drink> drinks = new();
 
         private MenuManager() { }
 
-        public static MenuManager Instance => instance;
+        public static MenuManager? Instance => instance;
 
         public void AddDish(Dish dish) => dishes.Add(dish);
         public void AddDrink(Drink drink) => drinks.Add(drink);
