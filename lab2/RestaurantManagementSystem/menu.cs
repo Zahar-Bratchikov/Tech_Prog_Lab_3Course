@@ -2,7 +2,7 @@
 
 namespace RestaurantManagementSystem
 {
-    public class Dish: MenuItem
+    public class Dish : MenuItem
     {
         public override float GetCost()
         {
@@ -10,7 +10,7 @@ namespace RestaurantManagementSystem
         }
     }
 
-    public class Drink: MenuItem
+    public class Drink : MenuItem
     {
 
         public override float GetCost()
@@ -32,7 +32,24 @@ namespace RestaurantManagementSystem
 
         public override float GetCost()
         {
-            return dish.GetCost() + 2; //Увеличиваем стоимость, если добавляем какую-лтбо опцию к блюду
+            return dish.GetCost() + 2; //Увеличиваем стоимость, если добавляем какую-либо опцию к блюду
+        }
+    }
+
+    public class DecoratorOptionDrink : MenuItem
+    {
+        private readonly MenuItem drink;
+        public string Option { get; set; }
+
+        public DecoratorOptionDrink(MenuItem drink, string option)
+        {
+            this.drink = drink;
+            Option = option;
+        }
+
+        public override float GetCost()
+        {
+            return drink.GetCost() + 2;
         }
     }
 }
