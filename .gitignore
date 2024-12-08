@@ -1,0 +1,6 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/lab2/RestaurantManagementSystem/.vs
+/lab2/RestaurantManagementSystem/obj/Debug/net8.0
