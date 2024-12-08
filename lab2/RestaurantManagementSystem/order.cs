@@ -1,6 +1,6 @@
 ﻿namespace RestaurantManagementSystem
 {
-    public interface IClientObserver
+    public interface IOrderObserver
     {
         void UpdateStatus(OrderStatus status);
     }
@@ -14,7 +14,7 @@
     {
         private List<MenuItem> orderItems = new();
         private OrderStatus status;
-        private List<IClientObserver> observers = new();
+        private List<IOrderObserver> observers = new();
 
         private void notifyClients()
         {
@@ -45,7 +45,7 @@
             notifyClients();
         }
 
-        public void attach(IClientObserver observer)
+        public void attach(IOrderObserver observer)
         {
             observers.Add(observer);
         }
@@ -62,7 +62,7 @@
         public OrderStatus Status => status;
     }
 
-    public class Client : IClientObserver
+    public class Client : IOrderObserver
     {
         public string name { get; set; }
         public string contactInfo { get; set; }
